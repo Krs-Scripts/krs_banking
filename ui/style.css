@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+#Tutto {
+	opacity: 0;
+	transition: 0.5s ease-in-out opacity;
+}
+
+*:focus {
+	outline: none;
+}
+
+:root {
+
+    --coloreclose: #74C0FC;
+	--background_color_close: #1a2d3f;
+	--background_color_close_hover: rgb(13, 61, 105);
+    
+	--background_color_contenitore: #1a1b1e;
+	--colore_contenitore: #74C0FC;
+
+	--linea_logo: #1a2d3f;
+	--linea_verticale: #1a2d3f;
+
+	--colore_icona_dollaro: #74C0FC;
+	--colore_importo_numeri: #74C0FC;
+
+	--colore_bottoni_preleva_veloci: #74C0FC;
+	--background_colore_bottoni_veloci: #1a2d3f;
+	--background_bottoni_preleva_veloce_hover: rgb(13, 61, 105);
+
+	--colore_bottoni_azioni: #74C0FC;
+	--background_bottoni_azioni: #1a2d3f;
+	--background_bottoni_azioni_hover: rgb(13, 61, 105);
+
+	--background_colore_input: #25262998;
+	--colore_input_numeri: #ffffff;
+}
+
+.contenitore-close {
+	position: absolute;
+	margin-top: 0.5vh;
+}
+
+.close {
+    display: block;
+    margin-left: 85vh;
+    height: 25px;
+    width: 25px;
+    border: none;
+    color: var(--coloreclose);
+	background-color: var(--background_color_close);
+    border-radius: 0.9vh;
+    transition: 0.4s ease-in-out background-color;
+	cursor: pointer;
+}
+
+.close:hover {
+	background-color: var(--background_color_close_hover);
+}
+
+.contenitore {
+
+	display: block;
+	margin: auto;
+	text-align: center;
+	width: 950px;
+	height: 390px;
+	background-color: var(--background_color_contenitore);
+	border-radius: 0.9vh;
+	color: var(--colore_contenitore);
+	margin-top: 15%;
+	font-family: Arial;
+}
+
+.linea_verticale {
+
+	float: left;
+	padding: 10px;
+	width: 30%;
+	height: 340px !important;
+	text-align: left;
+	border-right: 0.1vh solid var(--linea_verticale);
+}
+
+.parte_di_destra {
+	
+	float: left;
+	padding: 10px;
+	width: 70%;
+	height: 100%;
+}
+
+.logo_banca {
+
+	height: 7vh;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	border-bottom: 0.1vh solid var(--linea_logo);
+}
+
+.info_del_giocatore {
+	font-size: 12px;
+}
+
+.nome_giocatore {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.icon-dollar {
+	margin-top: 10px;
+	font-size: 21px;
+	font-weight: bold;
+	letter-spacing: -1.5px;
+	color: var(--colore_icona_dollar);
+	text-align: center;
+}
+
+.importo {
+
+	font-size: 20px;
+	text-align: center;
+	color: var(--colore_importo_numeri);
+	display: inline-block;
+	margin-left: 5px;
+	font-weight: bold;
+}
+
+.testo-messaggio-azioni {
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.bottoni-preleva-veloce {
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	height: 40px;
+	width: 150px;
+	border: none;
+	color: var(--colore_bottoni_preleva_veloci);
+	background-color: var(--background_colore_bottoni_veloci);
+	border-radius: 0.9vh;
+	transition: 0.2s ease-in-out all;
+	cursor: pointer;
+}
+
+.bottoni-preleva-veloce:hover {
+	background-color: var(--background_bottoni_preleva_veloce_hover);
+}
+
+.bottoni_azioni {
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 40px;
+	color: var(--colore_bottoni_azioni);
+	background-color: var(--background_bottoni_azioni);
+	border: none;
+	border-radius: 0.9vh;
+	cursor: pointer;
+	transition: 0.2s ease-in-out all;
+}
+
+.bottoni_azioni:hover {
+	background-color: var(--background_bottoni_azioni_hover);
+}
+
+.testo_titoli_azioni {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.testo_azioni {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.azioni_di_destra {
+	float: left;
+	width: 50%;
+}
+
+.pos_titoli_azioni_azioni {
+	margin-top: 12px;
+}
+
+.pos_titolo_ID_giocatore {
+	margin-top: 40px;
+}
+.pos_titolo_trasferimento {
+	margin-top: 40px;
+}
+
+.pos_titolo_preleva{
+	margin-top: 40px;
+}
+
+.pos_titolo_deposita{
+	margin-top: 40px;
+}
+
+input[type='number'] {
+
+	width: 200px;
+	height: 30px;
+	border: none;
+	margin: 5px 0;
+	text-align: center;
+	padding: 5px;
+	border-radius: 0.9vh;
+	background-color: var(--background_colore_input);
+	color: var(--colore_input_numeri);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* 
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██ █▀▄██ ▄▄▀██ ▄▄▄ 
+██ ▄▀███ ▀▀▄██▄▄▄▀▀
+██ ██ ██ ██ ██ ▀▀▀ 
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ */

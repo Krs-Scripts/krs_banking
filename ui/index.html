@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div class="contenitore" id="Tutto">
+		<div class="contenitore-close">
+			<button class="close"><i class="fa-solid fa-xmark"></i></button>
+
+			<div class="row">
+				<div class="linea_verticale">
+					<img src="logo.png" class="logo_banca" />
+					<div class="info_del_giocatore">
+						<div class="nome_giocatore">Name Player</div>
+						<div class="icon-dollar">
+							<i class="fa-solid fa-dollar-sign"></i>
+							<div class="importo"></div>
+						</div>
+					</div>
+					<!-- AZIONI VELOCI -->
+					<div class="azioni-veloci">
+						<div class="testo-messaggio-azioni">Rapid Actions</div>
+						<button class="bottoni-preleva-veloce" id="preleva-1000">
+							<i class="fa-solid fa-money-check-dollar"></i> WITHDRAW $1000</button>
+						<button class="bottoni-preleva-veloce" id="preleva-2000">
+							<i class="fa-solid fa-money-check-dollar"></i> WITHDRAW $2000</button>
+						<button class="bottoni-preleva-veloce" id="preleva-3000">
+							<i class="fa-solid fa-money-check-dollar"></i> WITHDRAW $3000</button>
+					</div>
+				</div>
+				<!-- AZIONI -->
+				<div class="parte_di_destra">
+						<div class="azioni_di_destra">
+								<div class="testo_titoli_azioni pos_titoli_azioni">
+									<i class="fa-solid fa-users"></i> Actions</div>
+								<div class="deposit pos_titolo_deposita">
+									<div class="testo_azioni">Amount to deposited</div>
+									<input type="number" placeholder="Quantità" id="depositaImporto" class="inputs" />
+									<button class="bottoni_azioni" id="deposit">
+										<i class="fa-solid fa-piggy-bank"></i> DEPOSIT</button>
+								</div>
+								<div class="withdraw pos_titolo_preleva">
+									<div class="testo_azioni">Amount to withdraw</div>
+									<input type="number" placeholder="Quantità" id="ritiraImporto" class="inputs" />
+									<button class="bottoni_azioni" id="withdraw">
+										<i class="fa-solid fa-money-check-dollar"></i> WITHDRAW</button>
+								</div>
+							</div>
+						<!-- TRASFERIMENTO -->
+						<div class="azioni_di_destra">
+							<div class="trasferire-soldi">
+								<div class="testo_titoli_azioni pos_titoli_azioni">
+									<i class="fa-solid fa-download"></i> Transfer</div>
+								<div class="seleziona-input">
+									<div class="testo_azioni pos_titolo_ID_giocatore">ID Player</div>
+									<input type="number" placeholder="ID" id="idGiocatore" class="inputs" />
+								</div>
+								<div class="seleziona-input">
+									<div class="testo_azioni pos_titolo_trasferimento">Amount to transfer</div>
+									<input type="number" placeholder="Quantità" id="trasferireImporto" class="inputs" />
+								</div>
+								<button class="bottoni_azioni" id="trasferimento">
+									<i class="fa-solid fa-user-group"></i> TRANSFER</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="script.js"></script>
+</html>
+
+
+<!-- 
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██ █▀▄██ ▄▄▀██ ▄▄▄ 
+██ ▄▀███ ▀▀▄██▄▄▄▀▀
+██ ██ ██ ██ ██ ▀▀▀ 
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ -->
