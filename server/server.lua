@@ -51,8 +51,8 @@ RegisterNetEvent("krs_banking:trasferisci", function(importo, target)
         xPlayer.removeAccountMoney("bank", importo)
         xTarget.addAccountMoney('bank', importo)
 
-        TriggerClientEvent('ox_lib:notify', target, {type = 'success', description = "Hai trasferito $" .. importo .. " a ID " .. target, 5000})
-        TriggerClientEvent('ox_lib:notify', source, {type = 'success', description = "Hai ricevuto $" .. importo .. " da ID " .. source, 5000})
+        TriggerClientEvent('ox_lib:notify', source, {type = 'success', description = "Hai trasferito $" .. importo .. " a ID " .. target, 5000})
+        TriggerClientEvent('ox_lib:notify', target, {type = 'success', description = "Hai ricevuto $" .. importo .. " da ID " .. source, 5000})
     else
         TriggerClientEvent('ox_lib:notify', source, {type = 'error', description = 'Non hai abbastanza denaro nella tua banca.', 5000})
     end
