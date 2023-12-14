@@ -23,7 +23,6 @@ Config.OpzioniTarget = {
     {
         icon = 'fa-solid fa-building-columns',
         label = 'Open Bank',
-        items = 'water',
         onSelect = function(data)
            apriBanca()
         end,
