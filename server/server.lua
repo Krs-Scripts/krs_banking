@@ -71,3 +71,25 @@ lib.callback.register('krs_banking:infoPlayer', function(source)
 
     return nome, banca
 end)
+-- ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+-- ██ ▄▄▀██ ██ ██ ███ ████ ▄▄▀██ ▄▄▀██ ▄▄▄██ ▄▄▀█▄ ▄█▄▄ ▄▄████ ▄▄▀█ ▄▄▀██ ▄▄▀██ ▄▄▀
+-- ██ ▄▄▀██ ██ ██▄▀▀▀▄████ █████ ▀▀▄██ ▄▄▄██ ██ ██ ████ ██████ ████ ▀▀ ██ ▀▀▄██ ██ 
+-- ██ ▀▀ ██▄▀▀▄████ ██████ ▀▀▄██ ██ ██ ▀▀▀██ ▀▀ █▀ ▀███ ██████ ▀▀▄█ ██ ██ ██ ██ ▀▀ 
+-- ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+RegisterNetEvent("krs_banking:buyCreditCard", function(metadata)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local nomePlayer = xPlayer.getName()
+
+    local card = exports.ox_inventory:Search(source, 'count', Config.items)
+    local money = exports.ox_inventory:Search(source, 'count', 'money')
+
+    if money >= Config.PriceCreditCard and card < 1 then
+        exports.ox_inventory:RemoveItem(source, 'money', Config.PriceCreditCard)
+        exports.ox_inventory:AddItem(source, Config.items, 1, {description = nomePlayer})
+        TriggerClientEvent('ox_lib:notify', source, {type = 'success', description = 'Hai acquistato una carta di credito.', 5000})
+    elseif money < Config.PriceCreditCard then
+        TriggerClientEvent('ox_lib:notify', source, {type = 'error', description = 'Non hai abbastanza soldi.', 5000})
+    elseif card >= 1 then
+        TriggerClientEvent('ox_lib:notify', source, {type = 'inform', description = 'Hai già una carta di credito.', 5000})
+    end
+end)

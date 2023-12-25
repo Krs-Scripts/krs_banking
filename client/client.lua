@@ -5,14 +5,33 @@
 -- ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 exports.ox_target:addModel(Config.AtmProp, {
     {
-		icon = Config.IconAtm,
+        icon = Config.IconAtm,
         label = Config.LabelAtm,
+        items = Config.items,
+        onSelect = function(data)
+
+            if lib.progressCircle({
+                duration = 3000,
+                label = 'Usando la Carta di Credito',
+                position = 'bottom',
+                useWhileDead = false,
+                canCancel = true,
+                disable = {
+                    car = true,
+                    move = true,
+                },
+                anim = {
+                    dict = 'mp_common',
+                    clip = 'givetake1_a'
+                },
+
+            }) then 
+                apriBanca()
+            end
+        end,
         canInteract = function(entity, distance, coords, name, bone)
             return not IsEntityDead(entity)
         end,
-        onSelect = function(data)
-            apriBanca()
-        end
     },
 })
 -- ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -40,7 +59,6 @@ CreateThread(function()
         end
 
         local modello = lib.requestModel(cfg.modello)
-
 
         points[i] = lib.points.new({
             coords = vector3(cfg.posizione.x, cfg.posizione.y, cfg.posizione.z),
