@@ -43,13 +43,13 @@ RegisterNetEvent("krs_banking:trasferisci", function(importo, target)
     local xPlayer = ESX.GetPlayerFromId(source)
     local xTarget = ESX.GetPlayerFromId(target)
 
-    if not xTarget then return end 
+    --if not xTarget then return end 
 
-    local sBanca = xPlayer.getAccount("bank").money
+    local sBanca = xPlayer?.getAccount("bank").money
 
     if sBanca >= importo then
         xPlayer.removeAccountMoney("bank", importo)
-        xTarget.addAccountMoney('bank', importo)
+        xTarget?.addAccountMoney('bank', importo)
 
         TriggerClientEvent('ox_lib:notify', source, {type = 'success', description = "Hai trasferito $" .. importo .. " a ID " .. target, 5000})
         TriggerClientEvent('ox_lib:notify', target, {type = 'success', description = "Hai ricevuto $" .. importo .. " da ID " .. source, 5000})
